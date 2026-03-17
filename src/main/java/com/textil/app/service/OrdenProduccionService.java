@@ -60,8 +60,6 @@ public class OrdenProduccionService {
         return ordenProduccionRepository.findById(id)
                 .map(orden -> {
                     orden.setCliente(ordenActualizada.getCliente());
-                    orden.setHilo(ordenActualizada.getHilo());
-                    orden.setPesoHiloKg(ordenActualizada.getPesoHiloKg());
                     orden.setEstado(ordenActualizada.getEstado());
                     return ordenProduccionRepository.save(orden);
                 });
